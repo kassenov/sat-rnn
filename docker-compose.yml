@@ -23,12 +23,12 @@ services:
         build:
             context: ./dockerfiles/.
             dockerfile: jupyter.Dockerfile
-#        deploy:              -- disabled until 1.28 is released
-#          resources:
-#            reservations:
-#              devices:
-#              - 'driver': 'nvidia'
-#                'capabilities': ['gpu']
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                    - 'driver': 'nvidia'
+                      'capabilities': ['gpu']
         env_file: ./.env
         ports:
             - ${JUPYTER_PORT}:${JUPYTER_PORT}
