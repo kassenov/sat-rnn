@@ -29,3 +29,7 @@ RUN pip3 install \
     transformers \
     # Progress bar to track experiments
     barbar
+# Install Albumentations
+RUN pip3 install \
+    # albumentations
+    albumentations
