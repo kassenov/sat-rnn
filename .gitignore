@@ -1,4 +1,5 @@
 .env
 workspace.code-workspace
-notebooks/data
+notebooks/models
+notebooks/data/augmented
 notebooks/.ipynb_checkpoints
