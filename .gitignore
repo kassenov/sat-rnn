@@ -2,4 +2,6 @@
 workspace.code-workspace
 notebooks/models
 notebooks/data/augmented
+notebooks/data/original (*
+notebooks/data/augmented
 notebooks/.ipynb_checkpoints

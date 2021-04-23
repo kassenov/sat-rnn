@@ -1,6 +1,11 @@
 # NVIDIA CUDA image as a base
 # We also mark this image as "jupyter-base" so we could use it by name
 FROM nvidia/cuda:11.1-runtime AS jupyter-base
+
+# tzdata fix
+ENV TZ=Asia/Dubai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 WORKDIR /
 # Install Python and its tools
 RUN apt update && apt install -y --no-install-recommends \
@@ -8,7 +13,8 @@ RUN apt update && apt install -y --no-install-recommends \
     build-essential \
     python3-dev \
     python3-pip \
-    python3-setuptools
+    python3-setuptools \
+    python3-opencv
 RUN pip3 -q install pip --upgrade
 # Install all basic packages
 RUN pip3 install \
@@ -32,4 +38,5 @@ RUN pip3 install \
 # Install additional libs
 RUN pip3 install \
     sklearn \
+    opencv-python \
     matplotlib
