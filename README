@@ -1,3 +1,5 @@
+This project focuses on the detection of whether a field is being sown or left fallow using a series of satellite images. By harnessing the power of both Recurrent Neural Networks (RNN) and Convolutional Neural Networks (CNN), we aim to classify sequences of images and provide valuable insights into the agricultural landscape.
+
 The docker-compose version that I have used is 1.28.0, as I had complications using my video card in Ubuntu.
 
 Before doing anything you have to make augmentations. I have added the original images.
@@ -9,9 +11,9 @@ Note that there are two models in there:
 - CNN (pre-trained on the ImageNet dataset - ResNet18) + RNN
 - Three-dimensional convolutional neural network (3D-CNN) - Spatio-temporal Convolutions for Action Recognition (https://arxiv.org/pdf/1711.11248.pdf)
 
-To switch between them uncomment one of them and comment another one:
+To switch between them uncomment one of them and comment on another one:
 
 - model_type = "3dcnn"
 - model_type = "rnn"
 
-Another note that FieldsDataset has two params, *seq_length* for number of images per sequence and *step* for gap between next sequence.
+Another note is that FieldsDataset has two params, *seq_length* for the number of images per sequence and *step* for the gap between the next sequence.
